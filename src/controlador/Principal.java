@@ -74,7 +74,9 @@ public class Principal {
     public void rellenarArrays() {
         contador = 0;
         posicionJugador = 1;
-        
+        win = false;
+        dados = 0;
+            
         //LLENAR LAS POSICIIONES DE NUMEROS
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
@@ -165,6 +167,8 @@ public class Principal {
 
             if (posicionJugador > 64) {
                 win = true;
+                System.out.println("\n¡Felicidades has ganado!");
+                break;
             }
 
             System.out.println("Has avanzado " + dados + " casillas\n");
@@ -172,10 +176,6 @@ public class Principal {
             if (gameOver) {
                 System.out.println("¡Has caido en penalizacion!\n");
                 gameOver = false;
-            }
-
-            if (win) {
-                System.out.println("¡Felicidades has ganado!\n");
             }
 
             //PEQUENO MENU JUEGO
